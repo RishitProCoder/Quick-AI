@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="max-w-md">
           <img src={assets.logo} alt="QuickAi Logo" className="h-10" />
           <p className="mt-6 text-sm leading-relaxed">
-            Experience the power of AI with <strong>QuickAi</strong>. Transform your content creation with our suite of premium AI tools. Write articles, generate images, and enhance your productivity like never before.
+            Experience the power of AI with <strong>Quick AI</strong>. Transform your content creation with our suite of premium AI tools. Write articles, generate images, and enhance your productivity like never before.
           </p>
         </div>
 
@@ -53,10 +53,7 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="text-center text-xs md:text-sm mt-6 pb-6 text-gray-500">
         <p>
-          &copy; 2025 <a href="https://www.linkedin.com/in/md-sumon9897/" className="hover:text-primary">Mohammad Sumon</a>. All rights reserved.
-        </p>
-        <p className="mt-1">
-          GitHub: <a href="https://github.com/sumu9897" className="hover:text-primary">sumu9897</a>
+          &copy; 2025 <a href="https://portfolio-vert-nu-62.vercel.app/" className="hover:text-primary">Rishit Shivhare</a> All rights reserved.
         </p>
       </div>
     </footer>
