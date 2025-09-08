@@ -34,7 +34,7 @@ export const generateArticle = async (req, res) => {
         },
       ],
       temperature: 0.7,
-      max_tokens: 8192,
+      max_tokens: 8192,//useful for 1000-1500 words article
     });
 
     const content = response.choices[0].message.content;
