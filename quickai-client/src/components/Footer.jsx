@@ -1,5 +1,5 @@
-import React from 'react';
-import { assets } from '../assets/assets';
+import React from 'react'
+import { assets } from '../assets/assets'
 
 const Footer = () => {
   return (
@@ -53,11 +53,11 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="text-center text-xs md:text-sm mt-6 pb-6 text-gray-500">
         <p>
-          &copy; 2025 <a href="https://portfolio-vert-nu-62.vercel.app/" className="hover:text-primary">Rishit Shivhare</a> All rights reserved.
+          &copy 2025 <a href="https://portfolio-vert-nu-62.vercel.app/" className="hover:text-primary">Rishit Shivhare</a> All rights reserved.
         </p>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

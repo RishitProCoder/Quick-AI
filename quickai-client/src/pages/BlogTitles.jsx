@@ -1,11 +1,11 @@
-import { useAuth } from "@clerk/clerk-react";
-import { Hash, Sparkles } from "lucide-react";
-import React, { useState } from "react";
-import toast from "react-hot-toast";
-import Markdown from "react-markdown";
-import axios from "axios";
+import { useAuth } from "@clerk/clerk-react"
+import { Hash, Sparkles } from "lucide-react"
+import React, { useState } from "react"
+import toast from "react-hot-toast"
+import Markdown from "react-markdown"
+import axios from "axios"
 
-axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
+axios.defaults.baseURL = import.meta.env.VITE_BASE_URL
 
 const BlogTitles = () => {
   const blogCategories = [
@@ -17,20 +17,20 @@ const BlogTitles = () => {
     "Education",
     "Travel",
     "Food",
-  ];
+  ]
 
-  const [selectedCategory, setSelectedCategory] = useState("General");
-  const [input, setInput] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [content, setContent] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("General")
+  const [input, setInput] = useState("")
+  const [loading, setLoading] = useState(false)
+  const [content, setContent] = useState("")
 
-  const { getToken } = useAuth();
+  const { getToken } = useAuth()
 
   const onSubmitHandler = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     try {
-      setLoading(true);
-      const prompt = `Generate a blog title for the keyword ${input} in the category ${selectedCategory}`;
+      setLoading(true)
+      const prompt = `Generate a blog title for the keyword ${input} in the category ${selectedCategory}`
 
       const { data } = await axios.post(
         "/api/ai/generate-blog-title",
@@ -38,17 +38,17 @@ const BlogTitles = () => {
         {
           headers: { Authorization: `Bearer ${await getToken()}` },
         }
-      );
+      )
       if (data.success) {
-        setContent(data.content);
+        setContent(data.content)
       } else {
-        toast.error(data.message);
+        toast.error(data.message)
       }
     } catch (error) {
-      toast.error(error.message);
+      toast.error(error.message)
     }
-    setLoading(false);
-  };
+    setLoading(false)
+  }
   return (
     <div className="h-full overflow-y-scroll p-6 flex items-start flex-wrap gap-4 text-slate-700">
       {/* Left col */}
@@ -122,7 +122,7 @@ const BlogTitles = () => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BlogTitles;
+export default BlogTitles

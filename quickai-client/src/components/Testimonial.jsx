@@ -1,4 +1,4 @@
-import { assets } from "../assets/assets";
+import { assets } from "../assets/assets"
 
 const Testimonial = () => {
     const dummyTestimonialData = [
@@ -53,4 +53,4 @@ const Testimonial = () => {
     )
 }
 
-export default Testimonial;
+export default Testimonial

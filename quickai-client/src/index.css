@@ -17,3 +17,19 @@
 .cl-drawerRoot {
   z-index: 10;
 }
+
+/* src/styles/global.css or index.css */
+
+/* Force Prism code block styles like VS Code */
+pre[class*="language-"] {
+  background: #1e1e1e !important; /* VS Code dark background */
+  color: #d4d4d4 !important ;     /* default text color */
+  padding: 0.5rem !important;
+  border-radius: 0.5rem !important;
+  overflow-x: auto /* optional horizontal scroll */;
+}
+
+code[class*="language-"] {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+}

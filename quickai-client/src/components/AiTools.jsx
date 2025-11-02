@@ -29,4 +29,4 @@ const AiTools = () => {
   )
 }
 
-export default AiTools;
+export default AiTools

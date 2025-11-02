@@ -1,20 +1,20 @@
-import { Eraser, Sparkles } from "lucide-react";
-import React, { useState } from "react";
-import axios from "axios";
-import { useAuth } from "@clerk/clerk-react";
-import toast from "react-hot-toast";
+import { Eraser, Sparkles } from "lucide-react"
+import React, { useState } from "react"
+import axios from "axios"
+import { useAuth } from "@clerk/clerk-react"
+import toast from "react-hot-toast"
 
 
-axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
+axios.defaults.baseURL = import.meta.env.VITE_BASE_URL
 
 const RemoveBackground = () => {
-  const [input, setInput] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [content, setContent] = useState("");
+  const [input, setInput] = useState("")
+  const [loading, setLoading] = useState(false)
+  const [content, setContent] = useState("")
 
-  const { getToken } = useAuth();
+  const { getToken } = useAuth()
   const onSubmitHandler = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     try {
       setLoading(true)
 
@@ -25,18 +25,18 @@ const RemoveBackground = () => {
         {
           headers: { Authorization: `Bearer ${await getToken()}` },
         }
-      );
+      )
       if (data.success) {
-        setContent(data.content);
+        setContent(data.content)
       } else {
-        toast.error(data.message);
+        toast.error(data.message)
       }
     }
       catch (error){
-        toast.error(error.message);
+        toast.error(error.message)
       }
       setLoading(false)
-  };
+  }
   return (
     <div className="h-full overflow-y-scroll p-6 flex items-start flex-wrap gap-4 text-slate-700">
       {/* Left col */}
@@ -91,7 +91,7 @@ const RemoveBackground = () => {
         
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default RemoveBackground;
+export default RemoveBackground

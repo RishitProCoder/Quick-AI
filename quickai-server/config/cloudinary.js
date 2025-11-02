@@ -8,4 +8,15 @@ const connectCloudinary = async () => {
     })
 }
 
+export const uploadToCloudinary = async (filePath) => {
+  try {
+    const result = await cloudinary.uploader.upload(filePath, { folder: 'public' });
+    return result.secure_url;
+  } catch (err) {
+    console.error("Cloudinary upload error:", err);
+    return null;
+  }
+};
+
+
 export default connectCloudinary

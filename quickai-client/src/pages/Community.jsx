@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { useAuth, useUser } from "@clerk/clerk-react";
-import { Heart } from "lucide-react";
-import axios from "axios";
-import toast from "react-hot-toast";
+import React, { useEffect, useState } from "react"
+import { useAuth, useUser } from "@clerk/clerk-react"
+import { Heart } from "lucide-react"
+import axios from "axios"
+import toast from "react-hot-toast"
 
-axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
+axios.defaults.baseURL = import.meta.env.VITE_BASE_URL
 
 const Community = () => {
-  const [creations, setCreations] = useState([]);
-  const { user } = useUser();
+  const [creations, setCreations] = useState([])
+  const { user } = useUser()
   const [loading, setLoading] = useState(true)
   const {getToken} = useAuth()
 
@@ -27,7 +27,7 @@ const Community = () => {
       toast.error(error.message)
     }
     setLoading(false)
-  };
+  }
 
   const imageLikeToggle = async(id)=> {
     try {
@@ -48,9 +48,9 @@ const Community = () => {
 
   useEffect(() => {
     if (user) {
-      fetchCreations();
+      fetchCreations()
     }
-  }, [user]);
+  }, [user])
   return  !loading ?(
     <div className="flex-1 g-full flex flex-col gap-4 p-6">
       Creations
@@ -88,7 +88,7 @@ const Community = () => {
     <div className="flex justify-center items-center h-full">
       <span className="w-10 h-10 my-1 rounded-full border-3 border-primary border-t-transparent animate-spin"></span>
     </div>
-  );
-};
+  )
+}
 
-export default Community;
+export default Community
