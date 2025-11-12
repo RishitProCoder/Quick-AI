@@ -1,3 +1,4 @@
+import React from "react";
 const Company = () => {
     const companyLogos = ["slack", "framer", "netflix", "google", "linkedin", "instagram", "facebook"];
 
